@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vue_test_project</title>
+    <!-- подключаем Vue сылкой -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+
+    <!-- подключаем axios сылкой -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  </head>
+  <body>
+
+
+      <hr><h3>Взаимодействие с API через axios</h3>
+
+
+
+
+      <hr><h3>Пример №1</h3>
+      <div id="api-1">
+        <!-- кнопка для обращения к API -->
+        <button v-on:click="getAllVps">
+        Обратиться к API на DRF и получить все записи
+        </button>
+
+        <!-- вывод результата от API -->
+        <ol v-for="vps in vps_list">
+          <li>id  = {{ vps.pk }}</li>
+          <li>uid = {{ vps.uid }}</li>
+          <li>cpu = {{ vps.cpu }}</li>
+          <li>ram = {{ vps.ram }}</li>
+          <li>hdd = {{ vps.hdd }}</li>
+          <li>status = {{ vps.status }}</li>
+        </ol>
+      </div>
+
+
+
+
+    <hr><h3>Пример №2</h3>
+    <div id="api-2">
+      <p>Запись VPS</p
+      <ol>
+        <li>id  = {{ vps.pk }}</li>
+        <li>uid = {{ vps.uid }}</li>
+        <li>cpu = {{ vps.cpu }}</li>
+        <li>ram = {{ vps.ram }}</li>
+        <li>hdd = {{ vps.hdd }}</li>
+        <li>status = {{ vps.status }}</li>
+      </ol>
+
+      <select v-model="status">
+          <option>started</option>
+          <option>blocked</option>
+          <option>stopped</option>
+      </select>
+      <span>Выбрано: {{status}}</span>
+      <br>
+
+      <button v-on:click="changeVpsStatus(status)">
+      Сменить статус
+      </button>
+    </div>
+
+
+
+
+
+
+
+
+
+    <hr><h3>Стандартные примеры Vue</h3>
+
+
+    <hr><h3>Пример №1</h3>
+    <div id="app">
+      {{ message }}
+    </div>
+
+
+    <hr><h3>Пример №2</h3>
+    <div id="app-2">
+      <span v-bind:title="message">
+        Наведи на меня курсор на пару секунд,
+        чтобы увидеть динамически связанное значение title!
+      </span>
+    </div>
+
+
+    <hr><h3>Пример №3</h3>
+    <div id="app-3">
+      <span v-if="seen">Сейчас меня видно</span>
+    </div>
+
+
+    <hr><h3>Пример №4</h3>
+    Метод app4.todos.push({ text: 'Profit' })
+    позволит эллемент в список на отображение
+    директивой v-for
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+
+
+    <hr><h3>Пример №5</h3>
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">
+        Перевернуть сообщение
+      </button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
